@@ -21,6 +21,10 @@ No dependencies needed.
     * FEATURES:
       * TAB System.
       * Simple Virus Mechanic.
+* v0.0.2
+    * FEATURES:
+      * Each country may have different virus spread speed depending on their arguments.
+      * Virus is now able to travel between continents.
 
 ## Meta
 
