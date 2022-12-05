@@ -12,7 +12,7 @@ public class TimerRunnable implements Runnable{
                 e.printStackTrace();
             }
 
-            System.out.println(day);
+            System.out.println("Day: "+day+"\n------------------------------------------");
         }
 
 
