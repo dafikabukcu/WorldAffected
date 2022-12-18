@@ -4,12 +4,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public class StartWindow extends JFrame{
 
-    public static boolean isGameStarted = false;
+
     public static int starterCounter = 0;
 
     public static JPanel startPanel = new JPanel(){
@@ -72,7 +71,7 @@ public class StartWindow extends JFrame{
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gameWindow();
+                optionWindow();
             }
         });
 
@@ -132,6 +131,7 @@ public class StartWindow extends JFrame{
         setTitle("World Affected");
         setSize(600,600);
         setLocationRelativeTo(null);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setVisible(true);
 
@@ -163,11 +163,45 @@ public class StartWindow extends JFrame{
         }catch (IOException e){
             System.err.println("You shouldn't have changed the files.");
         }
+
+        BufferedReader reader = null;
+        // Get Data And List Them With DefaultListModel
+        DefaultListModel defListModel = new DefaultListModel<>();
+        JList list = new JList<>(defListModel);
+        JScrollPane scrollPane = new JScrollPane(list);
+        try{
+            reader = new BufferedReader(new FileReader("save.txt"));
+
+            String r;
+
+            while ((r = reader.readLine()) != null){
+                defListModel.addElement(r);
+            }
+
+            Color color = new Color(5,10,16);
+            add(scrollPane);
+            scrollPane.setBounds(205, 235, 180, 150);
+            list.setBackground(color);
+            list.setForeground(Color.WHITE);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }finally {
+            try {
+                reader.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 highScoresPanel.setVisible(false);
+                scrollPane.setVisible(false);
                 startPanel.setVisible(true);
+                readObjects();
             }
         });
         highScoresPanel.add(backButton);
@@ -182,10 +216,28 @@ public class StartWindow extends JFrame{
         return highScoresPanel;
     }
 
-    private void gameWindow(){
+    private void optionWindow(){
         this.setVisible(false);
-        SwingUtilities.invokeLater(()-> new GameWindow());
-        isGameStarted = true;
+        SwingUtilities.invokeLater(()-> new OptionWindow());
+    }
+
+    private void readObjects(){
+        try(FileInputStream fis = new FileInputStream("scores.worldAffected")){
+            try(ObjectInputStream ois = new ObjectInputStream(fis)){
+                Player playerRead = (Player) ois.readObject();
+                Player playerRead2 = (Player) ois.readObject();
+//                System.out.println(playerRead);
+                //System.out.println(playerRead2);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }catch (EOFException e){
+                System.out.println("no");
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

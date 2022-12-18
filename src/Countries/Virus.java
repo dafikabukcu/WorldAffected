@@ -5,9 +5,11 @@ import java.util.List;
 
 public class Virus{
 
-    public static int spreadSpeed = 50000;
+    public static int spreadSpeed = 8000;//50000
 
     public static List<World> infectedCountries = new ArrayList<>();
+    public static List<World> researchCenters = new ArrayList<>();
+    public static int researchCenterChance = 4;
 
     public static String[] transports = {"Bus", "Ship", "Plane"};
 

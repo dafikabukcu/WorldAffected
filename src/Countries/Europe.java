@@ -10,7 +10,7 @@ public class Europe extends World{
 
     public static int totalPopulation = 747636026;
 
-    public static int totalCountries = 6;
+    public static int totalCountries = 4;
 
     public Europe(boolean hasBugs, boolean hasStreetAnimals, boolean hasDirtyStreets, boolean hasNarrowPlaces, boolean isCold) {
         super(hasBugs, hasStreetAnimals, hasDirtyStreets, hasNarrowPlaces, isCold);

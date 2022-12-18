@@ -8,9 +8,12 @@ public class Turkey extends Asia{
 
     public static int virusSpreadSpeed = Virus.spreadSpeed;
 
+    public static boolean hasLost=false;
+    public static boolean hasWon=false;
+
 
     public Turkey() {
-        super(true,true,true,true,false);
+        super(true,true,true,false,false);
     }
 
     @Override

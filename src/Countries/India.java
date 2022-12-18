@@ -8,6 +8,9 @@ public class India extends Asia{
 
     public static int virusSpreadSpeed = Virus.spreadSpeed;
 
+    public static boolean hasLost=false;
+    public static boolean hasWon=false;
+
     public India() {
         super(true,true,true,true,false);
     }

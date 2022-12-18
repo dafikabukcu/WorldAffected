@@ -8,6 +8,9 @@ public class Poland extends Europe{
 
     public static int virusSpreadSpeed = Virus.spreadSpeed;
 
+    public static boolean hasLost=false;
+    public static boolean hasWon=false;
+
 
     public Poland() {
         super(false,false,false,false,true);

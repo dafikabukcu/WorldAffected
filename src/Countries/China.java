@@ -8,8 +8,11 @@ public class China extends Asia{
     //public long population = World.chinaPopulation;
     public static int virusSpreadSpeed = Virus.spreadSpeed;
 
+    public static boolean hasLost=false;
+    public static boolean hasWon=false;
+
     public China() {
-        super(true,true,true,true,false);
+        super(true,false,true,true,false);
     }
 
     public double getVirusSpreadSpeed(){

@@ -10,7 +10,7 @@ public class Asia extends World{
 
     public static long totalPopulation = 4641054775L;
 
-    public static int totalCountries = 4;
+    public static int totalCountries = 5;
 
     public Asia(boolean hasBugs, boolean hasStreetAnimals, boolean hasDirtyStreets, boolean hasNarrowPlaces, boolean isCold) {
         super(hasBugs, hasStreetAnimals, hasDirtyStreets, hasNarrowPlaces, isCold);

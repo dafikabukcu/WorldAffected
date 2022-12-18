@@ -28,7 +28,7 @@ public class Main {
         China china = new China();
         System.out.println(china.doesHaveDirtyStreets());
         while(true){
-            World.chinaPopulation--;
+            //World.chinaPopulation--;
 //            for (World w : Virus.infectedCountries){
 //                String countryName = w.getClass().getSimpleName();
 //                Field countryField = w.getClass().getDeclaredField("virusSpreadSpeed");

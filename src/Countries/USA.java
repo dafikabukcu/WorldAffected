@@ -14,6 +14,9 @@ public class USA extends World{
 
     public static int virusSpreadSpeed = Virus.spreadSpeed;
 
+    public static boolean hasLost=false;
+    public static boolean hasWon=false;
+
 
     public USA() {
         super(true, false, false, false, false);

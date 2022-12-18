@@ -12,6 +12,11 @@ public class World {
     public boolean hasNarrowPlaces;
     public boolean isCold;
 
+    //public static int totalVirusCount = 0;
+    public static int lostCountries = 0;
+    public static int wonCountries = 0;
+    public static int healedPeople = 0;
+
     public static HashMap<String, Long>countryMap = new HashMap<>();
 
     public World(boolean hasBugs, boolean hasStreetAnimals, boolean hasDirtyStreets, boolean hasNarrowPlaces, boolean isCold) {

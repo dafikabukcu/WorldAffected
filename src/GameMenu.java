@@ -37,7 +37,7 @@ public class GameMenu{
         b4.setMaximumSize(new Dimension(95,100));
         this.b4 = b4;
 
-        JButton b5 = new JButton("SCORES");
+        JButton b5 = new JButton("SAVE");
         b5.setMinimumSize(new Dimension(95,30));
         b5.setMaximumSize(new Dimension(95,100));
         this.b5 = b5;
